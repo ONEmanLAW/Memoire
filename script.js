@@ -17,6 +17,11 @@ function ledOnClickSound() {
     ledSound.play();
 }
 
+function mistakeSound() {
+    const mistakeAudio = new Audio('audios/error.wav');
+    mistakeAudio.play();
+}
+
 function conditions_buttons(idButtonCurrent) {
     const button = document.querySelector(`#${idButtonCurrent}`);
 
@@ -82,6 +87,7 @@ function nextStep() {
 }
 
 function resetSteps() {
+    mistakeSound();
     currentStep = 1;
     regenerateRandom();
     updateDisplay();
