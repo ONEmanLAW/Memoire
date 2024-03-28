@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url('fonts/Minecraft.ttf') format('truetype');
+}
+
+body{
+    background-image: url('assets/fondtexture.png');
+    background-repeat: no-repeat;
+    font-family: "Minecraft";
+}
+
+#top_elements{
+    display: flex;
+}
+
+#title_memoire{
+    margin-bottom: 0px;
+}
+
+#step_title{
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    color: white;
+    margin:0px;
+    width: fit-content;
+}
+
+#random_number{
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 150px;
+    background-color: black;
+    margin: 20px;
+    font-size: 50px;
+    color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    position: absolute;
+    top: -35px;
+    left: 125px;
+}
+
+#steps_check{
+    position: absolute;
+    left: 360px;
+    top: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 106px;
+    height: 245px;
+    background-image: url("assets/plaque.png");
+    background-size: 100%;
+    margin: 20px;
+}
+
+#steps_check .steps{
+    width: 36px;
+    height: 37px;
+    margin: 5px;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    width: 180px;
+    height: 180px;
+    margin-left: -10px;
+    margin-top: 10px;
+}
+
+#buttons_1_et_2 {
+    position: absolute;
+    left: 5px;
+    top: 190px;
+}
+
+#buttons_3_et_4 {
+    position: absolute;
+    left: 5px;
+    top: 337px;
+}
+
+#led_fin{
+    position: absolute;
+    left: 365px;
+    top: 50px;
+    width: 125px;
+    height: 125px;
+}
