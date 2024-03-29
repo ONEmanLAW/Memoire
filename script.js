@@ -1,6 +1,7 @@
-let params = new URLSearchParams(document.location.search);
-let idPartie = params.get('idPartie');
-let idModule = params.get('idModule');
+// Pour johnny
+// let params = new URLSearchParams(document.location.search);
+// let idPartie = params.get('idPartie');
+// let idModule = params.get('idModule');
 
 let rn_div = document.querySelector("#random_number");
 let stepTitle = document.querySelector("#step_title");
@@ -15,26 +16,26 @@ updateStepImages();
 document.querySelectorAll('.button').forEach(item => {
     item.addEventListener('click', () => conditions_buttons(item.id));
 });
+// Pour johnny
+// function resolve() {
+//     console.log(idPartie);
+//     console.log(idModule);
+//         $.ajax({
+//             url: `../functions/functionsDatabase.php?action=resolve&idPartie=${idPartie}&idModule=${idModule}`,
+//             success: function(data) {
+//             $('#result').html(data);
+//         }
+//     });
+// }
 
-function resolve() {
-    console.log(idPartie);
-    console.log(idModule);
-        $.ajax({
-            url: `../functions/functionsDatabase.php?action=resolve&idPartie=${idPartie}&idModule=${idModule}`,
-            success: function(data) {
-            $('#result').html(data);
-        }
-    });
-}
-
-function incrementError() {
-    $.ajax({
-            url: `../functions/functionsDatabase.php?action=incrementError&idPartie=${idPartie}&idModule=${idModule}`,
-            success: function(data) {
-            $('#result').html(data);
-        }
-    });
-}
+// function incrementError() {
+//     $.ajax({
+//             url: `../functions/functionsDatabase.php?action=incrementError&idPartie=${idPartie}&idModule=${idModule}`,
+//             success: function(data) {
+//             $('#result').html(data);
+//         }
+//     });
+// }
 
 function ledOnClickSound() {
     const ledSound = new Audio('audios/ledOn.wav');
@@ -92,7 +93,8 @@ function conditions_buttons(idButtonCurrent) {
                 clickedButton = button;
                 document.querySelector("#led_fin").setAttribute("src", "assets/led_fin_vert.png");
                 ledOnClickSound();
-                resolve();
+                //Pour johnny
+                //resolve();
                 resetSteps();
             } else {
                 resetSteps();
@@ -117,7 +119,8 @@ function resetSteps() {
     regenerateRandom();
     updateDisplay();
     updateStepImages();
-    incrementError();
+    //Pour Johnny
+    //incrementError();
 }
 
 function regenerateRandom() {

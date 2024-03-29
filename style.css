@@ -20,8 +20,8 @@ body{
 #step_title{
     font-size: 20px;
     position: absolute;
-    top: 30px;
-    left: 35px;
+    top: 40px;
+    left: 55px;
     color: white;
     margin:0px;
     width: fit-content;
@@ -30,8 +30,8 @@ body{
 #random_number{
     position: absolute;
     text-align: center;
-    top: 0px;
-    left: 0px;
+    top: 6px;
+    left: 25px;
     width: 300px;
     height: 150px;
     background-color: black;
@@ -44,7 +44,7 @@ body{
 h1 {
     position: absolute;
     top: -35px;
-    left: 125px;
+    left: 130px;
 }
 
 #steps_check{
