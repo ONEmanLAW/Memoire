@@ -17,6 +17,27 @@ document.querySelectorAll('.button').forEach(item => {
     item.addEventListener('click', () => conditions_buttons(item.id));
 });
 
+// function resolve() {
+//     console.log(idPartie);
+//     console.log(idModule);
+//         $.ajax({
+//             url: `../functions/functionsDatabase.php?action=resolve&idPartie=${idPartie}&idModule=${idModule}`,
+//             success: function(data) {
+//                 $('#result').html(data);
+//             }
+//         });
+//     }
+
+
+// function incrementError() {
+//     $.ajax({
+//             url: `../functions/functionsDatabase.php?action=incrementError&idPartie=${idPartie}&idModule=${idModule}`,
+//             success: function(data) {
+//                 $('#result').html(data);
+//             }
+//         });
+//     }
+
 function ledOnClickSound() {
     const ledSound = new Audio('audios/ledOn.wav');
     ledSound.play();
