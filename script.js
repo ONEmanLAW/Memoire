@@ -16,26 +16,6 @@ updateStepImages();
 document.querySelectorAll('.button').forEach(item => {
     item.addEventListener('click', () => conditions_buttons(item.id));
 });
-// Pour johnny
-// function resolve() {
-//     console.log(idPartie);
-//     console.log(idModule);
-//         $.ajax({
-//             url: `../functions/functionsDatabase.php?action=resolve&idPartie=${idPartie}&idModule=${idModule}`,
-//             success: function(data) {
-//             $('#result').html(data);
-//         }
-//     });
-// }
-
-// function incrementError() {
-//     $.ajax({
-//             url: `../functions/functionsDatabase.php?action=incrementError&idPartie=${idPartie}&idModule=${idModule}`,
-//             success: function(data) {
-//             $('#result').html(data);
-//         }
-//     });
-// }
 
 function ledOnClickSound() {
     const ledSound = new Audio('audios/ledOn.wav');
@@ -72,24 +52,6 @@ function conditions_buttons(idButtonCurrent) {
             break;
         case 3:
             if (checkStep3(button)) {
-                clickedButton = button;
-                nextStep();
-                ledOnClickSound();
-            } else {
-                resetSteps();
-            }
-            break;
-        case 4:
-            if (checkStep4(button)) {
-                clickedButton = button;
-                ledOnClickSound();
-                nextStep();
-            } else {
-                resetSteps();
-            }
-            break;
-        case 5:
-            if (checkStep5(button)) {
                 clickedButton = button;
                 document.querySelector("#led_fin").setAttribute("src", "assets/led_fin_vert.png");
                 ledOnClickSound();
@@ -145,10 +107,14 @@ function updateStepImages() {
     }
 }
 
+// Étape 1
+// Si l’écran affiche 1, appuyez sur le bouton en deuxième position.
+// Si l’écran affiche 2, appuyez sur le bouton en deuxième position.
+// Si l’écran affiche 3, appuyez sur le bouton en troisième position.
+// Si l’écran affiche 4, appuyez sur le bouton en quatrième position.
 function checkStep1(button) {
     switch (random_number) {
         case 1:
-            return button.id === 'button2';
         case 2:
             return button.id === 'button2';
         case 3:
@@ -160,61 +126,40 @@ function checkStep1(button) {
     }
 }
 
+// Étape 2
+// Si l’écran affiche 1, appuyez sur le bouton portant le chiffre « 4 ».
+// Si l’écran affiche 2, appuyez sur le bouton à la même position qu’à l’étape 1.
+// Si l’écran affiche 3, appuyez sur le bouton en première position.
+// Si l’écran affiche 4, appuyez sur le bouton à la même position qu’à l’étape 1.
 function checkStep2(button) {
     switch (random_number) {
         case 1:
             return button.id === 'button4';
         case 2:
+        case 4:
             return button === clickedButton;
         case 3:
             return button.id === 'button1';
-        case 4:
-            return button === clickedButton;
         default:
             return false;
     }
 }
 
+// Étape 3
+// Si l’écran affiche 1, appuyez sur le bouton ayant le même chiffre qu’à l’étape 2.
+// Si l’écran affiche 2, appuyez sur le bouton ayant le même chiffre qu’à l’étape 1.
+// Si l’écran affiche 3, appuyez sur le bouton en troisième position.
+// Si l’écran affiche 4, appuyez sur le bouton portant le chiffre « 4 ».
 function checkStep3(button) {
     switch (random_number) {
         case 1:
-            return button === clickedButton;
+            return button.id === 'button' + random_number;
         case 2:
-            return button === clickedButton;
+            return button.id === 'button' + random_number;
         case 3:
             return button.id === 'button3';
         case 4:
             return button.id === 'button4';
-        default:
-            return false;
-    }
-}
-
-function checkStep4(button) {
-    switch (random_number) {
-        case 1:
-            return button === clickedButton;
-        case 2:
-            return button.id === 'button1';
-        case 3:
-            return button === clickedButton;
-        case 4:
-            return button === clickedButton;
-        default:
-            return false;
-    }
-}
-
-function checkStep5(button) {
-    switch (random_number) {
-        case 1:
-            return button === clickedButton;
-        case 2:
-            return button === clickedButton;
-        case 3:
-            return button.id === 'button4';
-        case 4:
-            return button.id === 'button3';
         default:
             return false;
     }
